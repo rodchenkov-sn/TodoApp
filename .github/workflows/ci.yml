@@ -8,5 +8,5 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run ESLint
-      run: yarn run eslint .\src\
+      run: yarn run eslint ./src/
   
