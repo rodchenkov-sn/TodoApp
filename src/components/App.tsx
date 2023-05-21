@@ -4,8 +4,8 @@ import { useEffect, useState } from "react"
 import { Section, Hero, Container, Heading } from "react-bulma-components"
 
 import NewTodoForm from "./NewTodoForm"
-import TodoItem from "./TodoItem"
 import TodoItemCard from "./TodoItemCard"
+import TodoItem from "../TodoItem"
 
 export default function App() {
   const [items, setItems] = useState<TodoItem[]>(() => {

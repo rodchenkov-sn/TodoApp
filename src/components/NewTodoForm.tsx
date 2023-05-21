@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Button, Form } from "react-bulma-components"
 
-import TodoItem from "./TodoItem"
+import TodoItem from "../TodoItem"
 
 interface NewTodoFormProps {
   setItemsCB: React.Dispatch<React.SetStateAction<TodoItem[]>>
