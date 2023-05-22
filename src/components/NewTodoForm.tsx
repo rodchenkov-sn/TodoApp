@@ -1,35 +1,29 @@
-import { useState } from "react"
-
 import { Button, Form } from "react-bulma-components"
+import { useDispatch, useSelector } from "react-redux"
 
-import TodoItem from "../TodoItem"
+import { updateContent } from "../state/NewItemContent/Slice"
+import { RootState } from "../state/Store"
+import { addItem } from "../state/TodoItemsState/Slice"
 
-interface NewTodoFormProps {
-  setItemsCB: React.Dispatch<React.SetStateAction<TodoItem[]>>
-}
+export default function NewTodoForm() {
+  const content = useSelector((state: RootState) => state.newItemContent)
 
-export default function NewTodoForm(props: NewTodoFormProps) {
-  const [content, setContent] = useState("")
-
-  function addItem(content: string) {
-    if (content === "") {
-      return
-    }
-
-    props.setItemsCB(current => {
-      return [...current, { id: crypto.randomUUID(), content: content, done: false }]
-    })
-
-    setContent("")
-  }
+  const dispatch = useDispatch()
 
   return (
     <Form.Field kind="group">
       <Form.Control>
-        <Form.Input color="dark" value={content} onChange={e => setContent(e.target.value)} />
+        <Form.Input color="dark" value={content} onChange={e => dispatch(updateContent(e.target.value))} />
       </Form.Control>
       <Form.Control>
-        <Button color="dark" onClick={() => addItem(content)}>
+        <Button
+          color="dark"
+          onClick={() => {
+            if (content !== "") {
+              dispatch(addItem({ content }))
+              dispatch(updateContent(""))
+            }
+          }}>
           Add
         </Button>
       </Form.Control>

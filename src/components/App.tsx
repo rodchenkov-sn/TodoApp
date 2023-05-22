@@ -1,22 +1,14 @@
 import "bulma/css/bulma.min.css"
-import { useEffect, useState } from "react"
 
 import { Section, Hero, Container, Heading } from "react-bulma-components"
+import { useSelector } from "react-redux"
 
 import NewTodoForm from "./NewTodoForm"
 import TodoItemCard from "./TodoItemCard"
-import TodoItem from "../TodoItem"
+import { RootState } from "../state/Store"
 
 export default function App() {
-  const [items, setItems] = useState<TodoItem[]>(() => {
-    const savedItems = localStorage.getItem("ITEMS")
-    if (!savedItems) {
-      return []
-    }
-    return JSON.parse(savedItems)
-  })
-
-  useEffect(() => localStorage.setItem("ITEMS", JSON.stringify(items)), [items])
+  const items = useSelector((state: RootState) => state.todoItems.items)
 
   return (
     <>
@@ -28,18 +20,19 @@ export default function App() {
         </Hero.Body>
       </Hero>
       <Section>
-        <NewTodoForm setItemsCB={setItems} />
+        <NewTodoForm />
       </Section>
 
       {items
-        .sort((a, b) => {
-          if (a.done === b.done) {
-            return 0
-          }
-          return a.done ? 1 : -1
-        })
-        .map(e => (
-          <TodoItemCard key={e.id} item={e} setItemsCB={setItems} />
+        .filter(i => !i.done)
+        .map(i => (
+          <TodoItemCard key={i.id} item={i} />
+        ))}
+
+      {items
+        .filter(i => i.done)
+        .map(i => (
+          <TodoItemCard key={i.id} item={i} />
         ))}
     </>
   )
