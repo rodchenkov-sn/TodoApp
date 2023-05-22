@@ -1,7 +1,7 @@
 import { Button, Form } from "react-bulma-components"
 import { useDispatch, useSelector } from "react-redux"
 
-import { updateContent } from "../state/NewItemContent/Slice"
+import { updateContent } from "../state/NewItemContentState/Slice"
 import { RootState } from "../state/Store"
 import { addItem } from "../state/TodoItemsState/Slice"
 

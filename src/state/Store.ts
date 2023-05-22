@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-import newItemContentReducer from "./NewItemContent/Slice"
+import newItemContentReducer from "./NewItemContentState/Slice"
 import todoItemsReducer from "./TodoItemsState/Slice"
 
 export const store = configureStore({
