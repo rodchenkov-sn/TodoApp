@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 
 import DoneButton from "./DoneButton"
 import { deleteItem, setItemDone } from "../state/TodoItemsState/Slice"
-import TodoItem from "../TodoItem"
+import { TodoItem } from "../TodoItem"
 
 interface TodoItemCardProps {
   item: TodoItem

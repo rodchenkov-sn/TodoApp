@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 
 import { AddItemActionPayload, DeleteItemActionPayload, SetItemDoneActionPayload } from "./Payload"
-import TodoItem from "../../TodoItem"
+import { TodoItem } from "../../TodoItem"
 
 export interface TodoItemsState {
   items: TodoItem[]
@@ -26,4 +26,4 @@ export const todoItemsSlice = createSlice({
 
 export const { addItem, deleteItem, setItemDone } = todoItemsSlice.actions
 
-export default todoItemsSlice.reducer
+export const todoItemsReducer = todoItemsSlice.reducer
