@@ -1,6 +1,3 @@
-import "bulma/css/bulma.min.css"
-
-import { Section, Hero, Container, Heading } from "react-bulma-components"
 import { useSelector } from "react-redux"
 
 import NewTodoForm from "./NewTodoForm"
@@ -12,16 +9,8 @@ export default function App() {
 
   return (
     <>
-      <Hero color={"dark"}>
-        <Hero.Body>
-          <Container>
-            <Heading>TODO List</Heading>
-          </Container>
-        </Hero.Body>
-      </Hero>
-      <Section>
-        <NewTodoForm />
-      </Section>
+      <h1>TODO List</h1>
+      <NewTodoForm />
 
       {items
         .filter(i => !i.done)

@@ -1,4 +1,3 @@
-import { Button, Form } from "react-bulma-components"
 import { useDispatch, useSelector } from "react-redux"
 
 import { updateContent } from "../state/NewItemContentState/Slice"
@@ -11,22 +10,17 @@ export default function NewTodoForm() {
   const dispatch = useDispatch()
 
   return (
-    <Form.Field kind="group">
-      <Form.Control>
-        <Form.Input color="dark" value={content} onChange={e => dispatch(updateContent(e.target.value))} />
-      </Form.Control>
-      <Form.Control>
-        <Button
-          color="dark"
-          onClick={() => {
-            if (content !== "") {
-              dispatch(addItem({ content }))
-              dispatch(updateContent(""))
-            }
-          }}>
-          Add
-        </Button>
-      </Form.Control>
-    </Form.Field>
+    <>
+      <input color="dark" value={content} onChange={e => dispatch(updateContent(e.target.value))} />
+      <button
+        onClick={() => {
+          if (content !== "") {
+            dispatch(addItem({ content }))
+            dispatch(updateContent(""))
+          }
+        }}>
+        Add
+      </button>
+    </>
   )
 }
