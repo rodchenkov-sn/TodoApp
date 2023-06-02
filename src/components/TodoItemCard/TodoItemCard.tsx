@@ -13,12 +13,12 @@ export default function TodoItemCard({ item }: TodoItemCardProps) {
 
   return (
     <div>
-      <DoneButton
-        done={item.done}
-        onClicked={() => {
+      <button
+        onClick={() => {
           dispatch(setItemDone({ id: item.id, done: !item.done }))
-        }}
-      />
+        }}>
+        {item.done ? "Undone" : "Done"}
+      </button>
 
       {item.done ? <del>{item.content}</del> : item.content}
 
