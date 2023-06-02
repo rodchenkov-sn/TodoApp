@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux"
 
-import { deleteItem, setItemDone } from "../../state/TodoItemsState/Slice"
-import { TodoItem } from "../../TodoItem"
-import DoneButton from "../DoneButton/DoneButton"
+import DoneButton from "@/components/DoneButton"
+import { deleteItem, setItemDone } from "@/state/TodoItemsState/Slice"
+import { TodoItem } from "@/TodoItem"
 
 interface TodoItemCardProps {
   item: TodoItem

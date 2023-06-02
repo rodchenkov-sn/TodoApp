@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 
-import { RootState } from "../../state/Store"
-import TodoItemCard from "../TodoItemCard"
+import TodoItemCard from "@/components/TodoItemCard"
+import { RootState } from "@/state/Store"
 
 export default function TodoItemsList() {
   const items = useSelector((state: RootState) => state.todoItems.items)

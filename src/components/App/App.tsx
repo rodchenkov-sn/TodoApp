@@ -1,6 +1,6 @@
-import Header from "../Header"
-import NewTodoForm from "../NewTodoForm"
-import TodoItemsList from "../TodoItemsList"
+import Header from "@/components/Header"
+import NewTodoForm from "@/components/NewTodoForm"
+import TodoItemsList from "@/components/TodoItemsList"
 
 import "./App.css"
 
