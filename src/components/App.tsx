@@ -1,28 +1,13 @@
-import { useSelector } from "react-redux"
-
+import Header from "./Header"
 import NewTodoForm from "./NewTodoForm"
-import TodoItemCard from "./TodoItemCard"
-import { RootState } from "../state/Store"
+import TodoItemsList from "./TodoItemsList"
 
 export default function App() {
-  const items = useSelector((state: RootState) => state.todoItems.items)
-
   return (
     <>
-      <h1>TODO List</h1>
+      <Header />
       <NewTodoForm />
-
-      {items
-        .filter(i => !i.done)
-        .map(i => (
-          <TodoItemCard key={i.id} item={i} />
-        ))}
-
-      {items
-        .filter(i => i.done)
-        .map(i => (
-          <TodoItemCard key={i.id} item={i} />
-        ))}
+      <TodoItemsList />
     </>
   )
 }
