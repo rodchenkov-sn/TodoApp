@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux"
 
-import DoneButton from "@/components/DoneButton"
 import { deleteItem, setItemDone } from "@/state/TodoItemsState/Slice"
 import { TodoItem } from "@/TodoItem"
 
