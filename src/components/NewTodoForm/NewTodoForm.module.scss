@@ -24,7 +24,7 @@ $borderRadius: 10px;
         transition: 100ms;
 
         &:hover {
-            background-color: $accentBackgroundColorFocus;
+            background-color: darken($accentBackgroundColor, 10);
             cursor: pointer;
         }
     }
