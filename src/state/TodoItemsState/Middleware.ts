@@ -1,8 +1,9 @@
 import { createListenerMiddleware, isAnyOf } from "@reduxjs/toolkit"
 
 import { addItem, deleteItem, setItemDone } from "./Slice"
-import { TodoItem, isTodoItem } from "../../TodoItem"
-import { AppDispatch, RootState } from "../Store"
+
+import { AppDispatch, RootState } from "@/state/Store"
+import { TodoItem, isTodoItem } from "@/TodoItem"
 
 export function loadItemsFromLocalStore(): TodoItem[] {
   const itemsStr = localStorage.getItem("ITEMS")

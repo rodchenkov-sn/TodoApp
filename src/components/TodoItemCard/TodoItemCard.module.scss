@@ -1,0 +1,53 @@
+@import "@/styles/constants/Colors.scss";
+
+.itemCard {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    box-shadow: 0 0 5px gray;
+    border-radius: 10px;
+}
+
+@mixin actionButton($backgroundColor, $textColor, $borderRadius) {
+    padding: 10px;
+
+    border: 0px;
+    border-radius: $borderRadius;
+
+    background-color: $backgroundColor;
+    color: $textColor;
+
+    cursor: pointer;
+
+    transition: 100ms;
+
+    &:hover {
+        background-color: darken($backgroundColor, 10)
+    }
+}
+
+.doneButton {
+    @include actionButton($accentBackgroundColor, $accentTextColor, 10px 0 0 10px);
+}
+
+.undoneButton {
+    @include actionButton($fadedBackgroudColor, $accentTextColor, 10px 0 0 10px);
+}
+
+.deleteButton {
+    @include actionButton($dangerBackgroundColor, $accentTextColor, 0 10px 10px 0);
+}
+
+@mixin itemContent {
+    margin: auto 10px auto 10px;
+}
+
+.itemContentDone {
+    @include itemContent();
+
+    color: $fadedTextColor;
+}
+
+.itemContentNotDone {
+    @include itemContent();
+}
