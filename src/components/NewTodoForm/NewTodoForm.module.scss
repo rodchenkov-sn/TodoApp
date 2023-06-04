@@ -1,0 +1,47 @@
+@import "@/styles/constants/Colors.scss";
+@import "@/styles/constants/Font.scss";
+
+$borderRadius: 10px;
+
+.newTodoForm {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    margin: 20px;
+
+    button {
+        padding: 5px 10px 5px 10px;
+
+        border: 0;
+        border-radius: 0 $borderRadius $borderRadius 0;
+
+        background-color: $accentBackgroundColor;
+        color: $accentTextColor;
+        
+        font-weight: bold;
+        font-size: $formFontSize;
+
+        transition: 100ms;
+
+        &:hover {
+            background-color: $accentBackgroundColorFocus;
+            cursor: pointer;
+        }
+    }
+
+    input {
+        box-sizing: border-box;
+        padding: 5px 10px 5px 10px;
+
+        border-width: 3px;
+        border-color: $accentBackgroundColor;
+        border-style: solid;
+        border-radius: $borderRadius 0 0 $borderRadius;
+
+        font-size: $formFontSize;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
