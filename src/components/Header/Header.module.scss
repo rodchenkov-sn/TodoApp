@@ -1,0 +1,10 @@
+@import "@/styles/constants/Colors.scss";
+
+.header {
+    display: block;
+    margin: 0;
+    padding: 20px;
+
+    background-color: $accentBackgroundColor;
+    color: $accentTextColor;
+}
